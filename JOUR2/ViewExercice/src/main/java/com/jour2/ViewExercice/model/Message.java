@@ -13,6 +13,10 @@ public class Message {
         this.Mail = Mail;
     }
 
+    public Message(){
+        
+    }
+
 
     public String getSender() {
         return sender;

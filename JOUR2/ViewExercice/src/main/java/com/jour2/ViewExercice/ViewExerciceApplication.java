@@ -15,5 +15,6 @@ public class ViewExerciceApplication {
 
 		ViewApp.run();
 	}
+	
 
 }

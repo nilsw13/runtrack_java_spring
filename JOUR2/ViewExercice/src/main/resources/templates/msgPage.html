@@ -5,7 +5,17 @@
     <title>Message</title>
 </head>
 <body>
-    <h1>Message page</h1>
+    <h1>Message Page</h1>
+
+    <form action="#" th:action="@{/msg}" th:object="${newMessage}" method="POST">
+        <p>Nom</p>
+        <input type="text" th:field="*{sender}">
+        <p>Mail</p>
+        <input type="text" th:field="*{Mail}">
+        <p>Message</p>
+        <input type="text" th:field="*{Message}">
+        <input type="submit" value="Afficher">
+    </form>
 
     <div th:each="msg : ${msgList}">
         <p th:text="${msg.sender}"></p>
