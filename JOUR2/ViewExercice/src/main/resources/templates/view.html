@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title></title>
 </head>
 <body>
-    <h1 th:text="${greeting.message}"></h1>
+    <div th:each="msg : ${msgList}">
+        <p th:text="${msg.sender}"></p>
+        <p th:text="${msg.Mail}"></p>
+        <p th:text="${msg.Message}"></p>
+        
+    </div>
 </body>
 </html>
