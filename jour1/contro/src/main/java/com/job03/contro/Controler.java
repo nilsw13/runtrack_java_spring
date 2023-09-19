@@ -31,7 +31,7 @@ public class Controler {
         int a = 5;
         int b = 5;
         int result = a + b;
-        return String.format("hello %s, nous somme le %s et voici le resultat du calcul que tu ma demandé (%s + %s) : %s", name, now,a,b, result );
+        return String.format("hello %s, nous somme le %s et voici le resultat du calcul que tu ma demandé (%s + %s) : %s    voici le message issue du fichier.yml : %s", name, now,a,b, result, greetingMessage);
     }
 
  
