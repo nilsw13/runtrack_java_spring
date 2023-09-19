@@ -1,4 +1,4 @@
-package com.jour2.ViewExercice;
+package com.jour2.ViewExercice.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
