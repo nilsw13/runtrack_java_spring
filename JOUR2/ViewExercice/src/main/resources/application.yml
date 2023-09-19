@@ -1,0 +1,22 @@
+spring:
+  profiles:
+      active: dev
+        
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+greeting:
+  message: Bienvenu sur le profil DEV
+
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+greeting:
+  message: Bienvenu sur le profil PROD
