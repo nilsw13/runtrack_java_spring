@@ -13,8 +13,15 @@ public class ControApplication {
 
 	public static void main(String[] args) {
 		
-		
-		SpringApplication.run(ControApplication.class, args);
+		SpringApplication Monapp = new SpringApplication(ControApplication.class);
+
+		if (args.length > 0){
+			String profile = args[0];
+			System.setProperty("spring.profiles.active", profile);
+		}
+
+		Monapp.run(args);
+
 
 		
 	}

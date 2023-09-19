@@ -1,6 +1,6 @@
 spring:
   profiles:
-      active: prod
+      active: dev
         
 
 ---
@@ -9,7 +9,7 @@ spring:
     activate:
       on-profile: dev
 greeting:
-  message: Hello DEV
+  message: Hello ici le DEV
 
 
 
@@ -19,4 +19,4 @@ spring:
     activate:
       on-profile: prod
 greeting:
-  message: Hello PROD
+  message: Hello ici la Prod
