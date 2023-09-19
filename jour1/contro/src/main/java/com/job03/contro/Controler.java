@@ -24,14 +24,13 @@ public class Controler {
     @GetMapping("/")
     public String hello(@RequestParam(value = "name", defaultValue = "world") String name){
         
-        name = "Nils";
         Date now = new Date();
         SimpleDateFormat s = new SimpleDateFormat("dd/MM: HH:mm:ss");
         String formated = s.format(now);
         int a = 5;
         int b = 5;
         int result = a + b;
-        return String.format("hello %s, nous somme le %s et voici le resultat du calcul que tu ma demandé (%s + %s) : %s    voici le message issue du fichier.yml : %s", name, now,a,b, result, greetingMessage);
+        return String.format("hello %s, voici le resultat du calcul que tu ma demandé (%s + %s) :  %s ", ControApplication.getNom(),a,b, result);
     }
 
  
