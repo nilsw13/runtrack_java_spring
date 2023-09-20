@@ -19,7 +19,6 @@ public class IterationController {
        msgList.add(msg1);
        msgList.add(msg2);
        model.addAttribute("msgList", msgList);
-
        return "view";
 
 }

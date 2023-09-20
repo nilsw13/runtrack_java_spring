@@ -13,6 +13,7 @@ greeting:
 
 
 
+
 ---
 spring:
   config:
@@ -20,3 +21,4 @@ spring:
       on-profile: prod
 greeting:
   message: Bienvenu sur le profil PROD
+

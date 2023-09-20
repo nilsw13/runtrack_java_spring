@@ -5,16 +5,18 @@
     <title>Message</title>
 </head>
 <body>
-    <h1>Message Page</h1>
-    <h2 th:text="${welcomMessage}">Welcome</h2>
+    <h1 >Message Page</h1>
+    <h2 th:text="${WelcomeMessage}">Welcome</h2>
     <form action="#" th:action="@{/msg}" th:object="${newMessage}" method="POST">
         <p>Nom</p>
-        <input type="text" th:field="*{sender}">
+        <input type="text" th:field="*{sender}" placeholder="Nom">
         <p>Mail</p>
-        <input type="text" th:field="*{Mail}">
+        <input type="text" th:field="*{Mail}" placeholder="Email">
+        <p>Age</p>
+        <input type="number" th:field="*{Age}" placeholder="Age"><br>
+        <p th:if="${#fields.hasErrors('Age')}" th:errors="*{Age}">L'âge légal est requis</p>
         <p>Message</p>
-        <input type="number" th:field="*{Age}">
-        <input type="text" th:field="*{Message}">
+        <input type="text" th:field="*{Message}" placeholder="Votre message"><br>
         <input type="submit" value="Afficher">
     </form>
 
@@ -26,6 +28,7 @@
     <div th:each="msg : ${msgList}">
         <p th:text="${msg.sender}"></p>
         <p th:text="${msg.Mail}"></p>
+        <p th:text="${msg.Age}"></p>
         <p th:text="${msg.Message}"></p>
         
     </div>
