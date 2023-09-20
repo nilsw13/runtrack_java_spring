@@ -37,7 +37,7 @@ public class MessageController {
     @PostMapping("/msg")
     public String postedMessage(@Valid @ModelAttribute Message newMessage, BindingResult bindingResult, Model model){
         if (bindingResult.hasErrors()) {
-            return "msgPage";
+            return "error";
 
         }else {
 
