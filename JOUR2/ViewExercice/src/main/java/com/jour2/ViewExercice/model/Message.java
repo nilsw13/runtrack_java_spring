@@ -5,16 +5,27 @@ public class Message {
     private String sender;
     private String Message;
     private String Mail;
+    private int Age;
 
 
-    public Message(String sender, String Mail, String Message){
+    public Message(String sender, String Mail, String Message, int Age){
         this.sender = sender;
         this.Message = Message;
         this.Mail = Mail;
+        this.Age = Age;
     }
 
     public Message(){
-        
+
+    }
+
+
+    public int getAge(){
+        return Age;
+    }
+
+    public void setAge(){
+        this.Age = Age;
     }
 
 

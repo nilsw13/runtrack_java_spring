@@ -6,16 +6,22 @@
 </head>
 <body>
     <h1>Message Page</h1>
-
+    <h2 th:text="${welcomMessage}">Welcome</h2>
     <form action="#" th:action="@{/msg}" th:object="${newMessage}" method="POST">
         <p>Nom</p>
         <input type="text" th:field="*{sender}">
         <p>Mail</p>
         <input type="text" th:field="*{Mail}">
         <p>Message</p>
+        <input type="number" th:field="*{Age}">
         <input type="text" th:field="*{Message}">
         <input type="submit" value="Afficher">
     </form>
+
+    <div th:if="${successMessage}" class="success-message">
+        <p th:text="${successMessage}"></p>
+    </div>
+    
 
     <div th:each="msg : ${msgList}">
         <p th:text="${msg.sender}"></p>

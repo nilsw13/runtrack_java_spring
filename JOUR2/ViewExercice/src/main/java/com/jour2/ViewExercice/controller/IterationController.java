@@ -14,8 +14,8 @@ public class IterationController {
 
     @GetMapping("/view")
     public String showMessage(Model model){
-       Message msg1 = new Message("nils", "nils.wenting@laplateforme.io", "Voici mon Message");
-       Message msg2 = new Message("Ouss", "Ouss21@gmail.com", "Ceci est un autre test");
+       Message msg1 = new Message("nils", "nils.wenting@laplateforme.io", "Voici mon Message", 28);
+       Message msg2 = new Message("Ouss", "Ouss21@gmail.com", "Ceci est un autre test", 27);
        msgList.add(msg1);
        msgList.add(msg2);
        model.addAttribute("msgList", msgList);

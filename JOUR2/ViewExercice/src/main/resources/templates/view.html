@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -8,8 +8,8 @@
     <div th:each="msg : ${msgList}">
         <p th:text="${msg.sender}"></p>
         <p th:text="${msg.Mail}"></p>
+        <p th:text="${msg.Age}"></p>
         <p th:text="${msg.Message}"></p>
-        
     </div>
 </body>
 </html>

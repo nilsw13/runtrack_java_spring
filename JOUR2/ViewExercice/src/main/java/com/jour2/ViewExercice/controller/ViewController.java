@@ -16,16 +16,20 @@ public class ViewController {
     private List<Message> msgList = new ArrayList<>();
 
     @PostMapping("/msg")
-    public String postedMessage(@ModelAttribute Message newMessage){
+    public String postedMessage(@ModelAttribute Message newMessage, Model model){
+        
+        model.addAttribute("successMessage", "Le formulaire a été soumis avec succès!");
         msgList.add(newMessage);
+        System.out.println("postedMessage method called!");
         return "redirect:msg";
     }
     
     @GetMapping("/msg")
     public String showMessage(Model model){
+       model.addAttribute("WelcomeMessage", model); 
        model.addAttribute("msgList", msgList);
+       model.addAttribute("newAge", model);
        model.addAttribute("newMessage", new Message());
-
        return "msgPage";
 
         };
