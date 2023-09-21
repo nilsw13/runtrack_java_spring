@@ -16,9 +16,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:each="person : ${persons}">
+            <tr th:each="person : ${PersonList}">
                 <td th:text="${person.id}">ID</td>
-                <td th:text="${person.nom}">Nom</td>
+                <td th:text="${person.name}">Nom</td>
                 <td th:text="${person.age}">Age</td>
             </tr>
         </tbody>
