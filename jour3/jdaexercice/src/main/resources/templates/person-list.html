@@ -16,10 +16,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:each="person : ${PersonList}">
-                <td th:text="${person.id}">ID</td>
-                <td th:text="${person.name}">Nom</td>
-                <td th:text="${person.age}">Age</td>
+            <tr th:each="p : ${person}">
+                <td th:text="${p.id}">ID</td>
+                <td th:text="${p.name}">Nom</td>
+                <td th:text="${p.age}">Age</td>
+
+                <td> 
+                    <a th:href="@{/delete/{id}(id=${p.id})}" onclick="return confirm('Confirmez-vous la suppression ?')">Supprimer</a>
+                </td>
             </tr>
         </tbody>
     </table>

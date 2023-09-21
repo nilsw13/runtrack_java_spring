@@ -1,6 +1,10 @@
 package com.jour3.jdaexercice.entities;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.jour3.jdaexercice.repository.PersonRepository;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +22,10 @@ public class PersonEntity {
     public PersonEntity(String name, Integer age){
         this.name = name;
         this.age = age;
+    }
+
+
+    public PersonEntity() {
     }
 
 
@@ -45,7 +53,12 @@ public class PersonEntity {
     }
 
 
+    public void addNewPerson(PersonEntity person) {
+    }
 
+
+   
+    
     
     
 }
