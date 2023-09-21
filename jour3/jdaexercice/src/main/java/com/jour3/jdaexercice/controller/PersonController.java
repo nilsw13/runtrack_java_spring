@@ -1,49 +1,34 @@
 package com.jour3.jdaexercice.controller;
 
 import java.util.List;
-import java.util.Optional;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.jour3.jdaexercice.model.PersonEntity;
+import com.jour3.jdaexercice.entities.PersonEntity;
 import com.jour3.jdaexercice.repository.PersonRepository;
 
-@RestController
-@RequestMapping("/personne")
+@Controller
 public class PersonController{
-    
-    private final PersonRepository personRepository;
-
     @Autowired
-    public PersonController(PersonRepository personRepository){
-        this.personRepository = personRepository;
-    }
-    
-      @GetMapping("/byname/{nom}")
-    public Optional<PersonEntity> getPersonByNom(@PathVariable String nom) {
-        return personRepository.findByNom(nom);
+    PersonRepository monInterface;
+
+    public void addPerson(){
+        PersonEntity person1 = new PersonEntity("Nils", 27);
+        PersonEntity person2 = new PersonEntity("Ouss", 26);
+        PersonEntity person3 = new PersonEntity("Young", 28);
+        monInterface.save(person1);
+        monInterface.save(person2);
+        monInterface.save(person3);
     }
 
-    @GetMapping("/byage/{age}")
-    public List<PersonEntity> getPersonsByAge(@PathVariable int age) {
-        return personRepository.findByAge(age);
+    @GetMapping("/person-list")
+    public String findAll(Model model){
+        addPerson();
+        List<PersonEntity> PersonList = monInterface.findAll();
+        model.addAttribute("PersonList", PersonList);
+        return "person-list";
     }
-
-    @GetMapping("/countbyage/{age}")
-    public long countPersonsByAge(@PathVariable int age) {
-        return personRepository.countByAge(age);
-    }
-
-    @DeleteMapping("/deletebyname/{nom}")
-    public void deletePersonByNom(@PathVariable String nom) {
-        personRepository.deleteByNom(nom);
-    }
-
-    
 }
