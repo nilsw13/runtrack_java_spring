@@ -11,20 +11,15 @@ import com.jour3.jdaexercice.repository.PersonRepository;
 public class PersonService {
     @Autowired 
     private PersonRepository personRepository;
-
     public void addNewPerson(PersonEntity personEntity){
         personRepository.save(personEntity);
-
     }
-
     public void deletePerson(Long id){
         personRepository.deleteById(id);
     }
-
     public List<PersonEntity> showAllPerson(){
         return personRepository.findAll();
     }
-
     public Object findAll() {
         return null;
     }
