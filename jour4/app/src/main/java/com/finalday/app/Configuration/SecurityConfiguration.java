@@ -34,6 +34,7 @@ public class SecurityConfiguration {
         return http
              .csrf(csrf -> csrf.disable())
              .authorizeHttpRequests(auth -> {
+                auth.requestMatchers("/").permitAll();
                 auth.requestMatchers("/auth/**").permitAll();   // probleme d'autorisations a regler
                 auth.anyRequest().authenticated();
             })
