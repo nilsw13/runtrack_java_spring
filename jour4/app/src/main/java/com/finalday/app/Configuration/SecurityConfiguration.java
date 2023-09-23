@@ -34,7 +34,7 @@ public class SecurityConfiguration {
         return http
              .csrf(csrf -> csrf.disable())
              .authorizeHttpRequests(auth -> {
-                auth.requestMatchers("/auth/**").permitAll();
+                auth.requestMatchers("/auth/**").permitAll();   // probleme d'autorisations a regler
                 auth.anyRequest().authenticated();
             })
              .httpBasic(org.springframework.security.config.Customizer.withDefaults())
