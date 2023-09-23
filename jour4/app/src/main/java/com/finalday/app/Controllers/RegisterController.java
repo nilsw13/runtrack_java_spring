@@ -30,7 +30,7 @@ public class RegisterController {
     }
 
     @PostMapping("/register")
-    public String registerUser(@RequestBody RegistrationDTO body){
+    public String registerUser(RegistrationDTO body){
         authService.registerUser(body.getUsername(), body.getPassword());
         return "redirect:/auth"; 
     }
