@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +7,15 @@
 </head>
 <body>
     <main>
-        <form action="/register" class="formulaire">
-            <label class="formulaire__label" for="name">Saisir un nom d'utilisateur</label>
-            <input type="text">
+        <form action="/register" method="post" class="formulaire">
+            <label class="formulaire__label" for="username">Saisir un nom d'utilisateur</label>
+            <input th:field="*{user.username}" type="text">
             <label class="formulaire__label" for="password" >Veuillez saisir un mot de pass</label>
-            <input type="password">
+            <input th:field="*{user.password}" type="password">
             <label class="formulaire__label" for="password" >Confirmez votre mot de passe</label>
-            <input type="password">
+            <input th:field="*{user.password}" type="password">
+            <button type="submit">Sign up</button>
+            <span><a th:href="@{/login}"></a>-> Log in <- </span>
         </form>
     </main>
 </body>

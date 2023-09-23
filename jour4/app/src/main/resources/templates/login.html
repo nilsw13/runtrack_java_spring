@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Log in</title>
 </head>
 <body>
-    <h1>login ma guel</h1>
+    <main>
+        <form method="post" role="form" th:action="@{/login}" th:object="${user}" "/register" class="formulaire">
+            <label class="formulaire__label" for="username">Add a username</label>
+            <input th:field="*{username}" type="text">
+            <label class="formulaire__label" for="password" >Add password</label>
+            <input th:field="*{password}" type="password">
+            <button type="submit">Sign up</button>
+            <span>Don't have any account ?<a th:href="@{/login}"></a>-> Log in <- </span>
+        </form>
+    </main>
 </body>
 </html>
