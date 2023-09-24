@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to our website, make your choice...</h1>
+        <nav class="navbar">
+            <ul>
+                <li class="navbar__button"><a th:href="@{/loginpage}">Log in</a></li>
+                <li class="navbar__button"><a th:href="@{/register}">Sign in</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="dashboard">
+            <h1 class="dashboard__title">Welcome to your account</h1>
+            <div class="dashboard__user">
+            <h2 th:text="${userdetail.fullname}" class="dashboard__connected">User's dashboard</h2>
+        </div>
+    </div>
+</main>
+</body>
+</html>
